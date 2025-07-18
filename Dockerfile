@@ -1,11 +1,10 @@
 # Minimal base image with JDK 21
 FROM eclipse-temurin:21-jre
 
-WORKDIR /app
 
 # Copy your built JAR file from local system (after IntelliJ builds it)
-COPY target/docker-jenkins-integration.jar app.jar
+COPY target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
 
-EXPOSE 8080
+EXPOSE 8081
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/docker-jenkins-integration-sample.jar"]
